@@ -1,0 +1,450 @@
+Amazon | Add two polynomials represented as linked list
+
+compare two expressions
+
+Design Q&A application as in Amazon has it for each product
+
+4
+sabeer6870's avatar
+sabeer6870
+19
+August 4, 2017 9:31 PM
+
+8.4K VIEWS
+
+Design push notification :
+
+Which sends the notification to the registered users
+Which receives an event from promotions team
+Sends notification to iOS, android or sends an email or all three
+
+Email Server
+	* options
+	   * event or sensors for new mail
+	   * message queued
+Notification server
+	* Polling for new mail
+	* process message queue
+	Notification Manager
+		* invoke/Dispatcher
+	        * Notification service
+	            * push notifications to the devices according through http post
+Mobile/Desktop 
+* if push enabled
+	* service running in the background to listen to notification
+	
+Amazon | Farm land with cells Empty, Water and Barrier
+
+Design the build tool like gradle
+his includes high level design and low level design.
+
+https://medium.com/jay-tillu/what-is-gradle-why-google-choose-it-as-official-build-tool-for-android-adafbff4034
+
+Gradle is a Build tool.
+But before understanding Gradle, we need to understand what is build tool and why we need one.
+What is Build Tool?
+Build tool is a software that helps to automates the process of application creation. Build process incorporates compiling, linking, and packaging the code into executable form.
+Build tools used to automates tedious tasks like:
+Downloading dependencies
+Compiling source code into executable code
+packing that executable code and generate APK or executable form
+Running different tests etc.
+
+
+Longest Hierarchy
+0
+palakjain's avatar
+palakjain
+11
+Last Edit: July 27, 2019 7:45 AM
+
+657 VIEWS
+
+Location: India
+I was asked the following question:
+
+Given a set of pair of nodes of a graph, find the longest hierarchy that can be formed in the graph. By hierarchy, we mean that the destination of one pair of nodes should be the source of other pair of nodes e.g., Consider the following set:
+{(a,b), (b,c), (c,d)}
+In the above set, the longest hierarchy is abc. This can be derived considering a as source initially and then deriving the hierarchy further like a -> b -> c.
+
+I was unable to think of a solution initially but have realized that the question could be solved using DFS. Is this a correct approach to the question? What other approaches are poosible/efficient? Any sort of help is highly appreciated.
+
+Date problem
+0
+Anonymous User
+Anonymous User
+Last Edit: July 27, 2019 7:17 AM
+
+1.4K VIEWS
+
+Question -> "Given to dates, determine whether they were a month apart"
+
+Answer -> I was taken back by how simple the question was. Since the dates given were date objects (I used javascript), you can subtract and convert from milliseconds to days. Slightly tricky part is determining how many days ahead from earliest date is considered a month. I said it should be number of days in earliest month.
+
+Example ->
+function(2/15/2018, 2/18/2018) returns true
+function(3/4/2019, 4/5/2018) returns false
+
+
+Scrabble Game
+0
+Anonymous User
+Anonymous User
+Last Edit: July 24, 2019 6:38 AM
+
+407 VIEWS
+
+
+
+You are playing scrabble and you have n letters. Find the word with max points given letter points. Following are few considerations
+
+Every word must be valid as per English dictionary.
+For coding purpose, design your dictionary and store in memory.
+letters can have duplcates
+Size of dictionary can be huge
+Number of letters can be in range of 7
+word created must not be using more than given letters
+
+
+Onsite | Design a Vending Machine
+18
+nilanjanMhatre's avatar
+nilanjanMhatre
+29
+Last Edit: July 11, 2019 7:43 AM
+
+7.0K VIEWS
+
+Add items to the vending machine in fixed number of slots
+Payment using card or cash
+Select item to dispense
+
+Codilini's avatar
+Amazon | TicTacToe for NxN grid and M players in C++
+
+Thermometer or thermostat OOD
+
+
+Amazon comments filtering system
+
+
+My first take at it..
+
+Class encapsulating a 'comment'
+Main Filter abstract class
+Different types of Filter class like AbusiveContentFilter, Special Characters Filter, Duplicate Content Filter etc.
+A top 'Filters' class containing a method 'applyFilters' where filters can be passed as an array of 'Filter' objects.
+On application of these filters the comment would be cleaned and a return object of type 'ResultComment' with boolean attributes like isCommentOk
+
+Min distance between items
+0
+Anonymous User
+Anonymous User
+Last Edit: July 28, 2019 11:05 AM
+
+286 VIEWS
+
+You are given an API that you can call: List getSimilarItems(String item); Similarity is commutative. Example:
+
+getSimilarItems("A") -> ["B", "C", "D"]
+getSimilarItems("B") -> ["A", "D"]
+getSimilarItems("C") → ["A"]
+getSimilarItems("D") -> ["A", "B"]
+getSimilarItems("E") → []
+
+Implement an API which given two items, returns the degrees of distance between them:
+int getDistanceBetween(String sourceItem, String targetItem);
+
+Examples:
+getDistanceBetween("A", "A") → 0
+
+getDistanceBetween("A", "B") → 1
+
+getDistanceBetween("B", "C") -> 2 (through A)
+
+getDistanceBetween("A", "E") -> -1 (not similar through anything)
+
+Add new connection
+1
+Sithis's avatar
+Sithis
+Moderator
+3248
+Last Edit: July 27, 2019 10:13 AM
+
+2.2K VIEWS
+
+Check if an N-ary tree is in valid state after adding a new connection.
+
+boolean isValid(Node root, Node n1, Node n2);
+
+
+Connect n ropes with minimum cost
+AlgorithmsMisc AlgorithmsData Structure
+There are N ropes of given lengths. We have to connect with them. The cost of connecting one rope with other is the sum of their lengths. Our goal is to connect the N ropes with minimum cost.
+
+This problem can be solved using a heap tree. We will create min heap to insert all different lengths first, then remove minimum and second minimum item from min heap, connect them and again insert into the heap tree. When the heap will hold only one element, we can stop the process and get the connected rope with minimum costs.
+
+Input and Output
+Input: 
+The lengths of the ropes: {4, 3, 2, 6, 5, 7, 12}
+Output: 
+Total minimum cost: 103
+Algorithm
+findMinCost(array, n)
+Input: List of rope lengths, number of entries in the list.
+
+Output: Minimum cost to cut.
+
+Begin
+   minCost := 0
+   fill priority queue with the array elements, (greater value is higher priority)
+   while queue is not empty, do
+      item1 := get item from queue and delete from queue
+      item2 := get item from queue and delete from queue
+      minCost := minCost + item1 + item2
+      add (item1 + item2) into the queue
+   done
+   return minCost
+End
+Source Code (C++)
+#include<iostream>
+#include<queue>
+#include<vector>
+using namespace std;
+
+int findMinimumCost(int arr[], int n) {
+   //priority queue is set as whose value is bigger, have higher priority
+   priority_queue< int, vector<int>, greater<int>>queue(arr, arr+n);
+
+   int minCost = 0;
+
+   while (queue.size() > 1) {              //when queue has more than one element
+      int item1 = queue.top();            //item1 is the shortest element
+      queue.pop();
+
+      int item2 = queue.top();          //item2 is bigger than item1 but shorter then other
+      queue.pop();
+
+      minCost += item1 + item2;         //connect ropes and add them to the queue
+      queue.push(item1 + item2);
+   }
+   return minCost;
+}
+
+int main() {
+   int ropeLength[] = {4, 3, 2, 6, 5, 7, 12};
+   int n = 7;
+   cout << "Total minimum cost: " << findMinimumCost(ropeLength, n);
+}
+Output
+Total minimum cost: 103
+
+23. Merge k Sorted Lists
+Hard
+
+2871
+
+190
+
+Favorite
+
+Share
+Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+
+Example:
+
+Input:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+Output: 1->1->2->3->4->4->5->6
+
+from operator import attrgetter
+
+class Solution:
+    # @param a list of ListNode
+    # @return a ListNode
+    def mergeKLists(self, lists):
+        sorted_list = []
+        for head in lists:
+            curr = head
+            while curr is not None:
+                sorted_list.append(curr)
+                curr = curr.next
+
+        sorted_list = sorted(sorted_list, key=attrgetter('val'))
+        #print(sorted_list,attrgetter('val'))
+        for i, node in enumerate(sorted_list):
+            try:
+                node.next = sorted_list[i + 1]
+            except:
+                node.next = None
+
+        if sorted_list:
+            return sorted_list[0]
+        else:
+            return None
+            
+   140. Word Break II
+Hard
+
+1140
+
+265
+
+Favorite
+
+Share
+Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences.
+
+Note:
+
+The same word in the dictionary may be reused multiple times in the segmentation.
+You may assume the dictionary does not contain duplicate words.
+Example 1:
+
+Input:
+s = "catsanddog"
+wordDict = ["cat", "cats", "and", "sand", "dog"]
+Output:
+[
+  "cats and dog",
+  "cat sand dog"
+]         
+            
+      class Solution(object):
+    def wordBreak(self, s, wordDict):
+        res = []
+        self.dfs(s, wordDict, '', res)
+        return res
+
+    def dfs(self, s, dic, path, res):
+    # Before we do dfs, we check whether the remaining string 
+    # can be splitted by using the dictionary,
+    # in this way we can decrease unnecessary computation greatly.
+        if self.check(s, dic): # prunning
+            if not s:
+                res.append(path[:-1])
+                return # backtracking
+            for i in xrange(1, len(s)+1):
+                if s[:i] in dic:
+                    # dic.remove(s[:i])
+                    self.dfs(s[i:], dic, path+s[:i]+" ", res)
+
+    # DP code to check whether a string can be splitted by using the 
+    # dic, this is the same as word break I.                
+    def check(self, s, dic):
+        dp = [False for i in xrange(len(s)+1)]
+        dp[0] = True
+        for i in xrange(1, len(s)+1):
+            for j in xrange(i):
+                if dp[j] and s[j:i] in dic:
+                    dp[i] = True
+        return dp[-1]
+
+
+Find Node in a Sorted Binary Tree
+5
+Anonymous User
+Anonymous User
+Last Edit: August 1, 2019 10:46 AM
+
+517 VIEWS
+
+Position: SDE2
+
+A binary tree is level order sorted (Each level is sorted). Find a given node. Could you do better than O(n). Eg. Could you find 10 in below eg faster than O(n)
+
+         1
+       /   \
+     2      3     
+    / \    / \
+  8    9 10   11
+
+
+# Function to traverse the tree in preorder  
+# and check if the given node exists in it  
+def ifNodeExists(node, key): 
+  
+    if (node == None):  
+        return False
+  
+    if (node.data == key):  
+        return True
+  
+    """ then recur on left sutree """
+    res1 = ifNodeExists(node.left, key)  
+  
+    """ now recur on right subtree """
+    res2 = ifNodeExists(node.right, key)  
+  
+    return res1 or res2 
+      
+  71. Simplify Path
+Medium
+
+494
+
+1315
+
+Favorite
+
+Share
+Given an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.
+
+In a UNIX-style file system, a period . refers to the current directory. Furthermore, a double period .. moves the directory up a level. For more information, see: Absolute path vs relative path in Linux/Unix
+
+Note that the returned canonical path must always begin with a slash /, and there must be only a single slash / between two directory names. The last directory name (if it exists) must not end with a trailing /. Also, the canonical path must be the shortest string representing the absolute path.
+
+ class Solution(object):
+    def simplifyPath(self, path):
+        ls = path.split("/")
+        ln = len(path)
+        if ln == 0:
+            return ""
+        st = []
+        for item in ls:
+            if item == "" or item == ".":
+                continue
+            if item == "..":
+                if st:
+                    st.pop(-1)
+            else:
+                st.append(item)
+
+
+        return "/" + "/".join(st)
+        
+  Telephone directory application with insert and search mechanism, data in app memory.
+First name(FN), last name(LN) and telephone number(TN) will be inserted.
+Can be searched by either first name, last name combo, or last name.
+Constraint on data is FN, LN combination will be unique.
+
+Example:-
+F1 L1 T1
+F2 L1 T2
+F1 L2 T3
+F2 L2 T4
+
+
+At Amazon FulFillment Center Packages are shiped based on priorites. Each package has its own priorites, based on following conditions packages needs to be picked and loaded into truck.
+
+Conditions:
+a) If package with highest priority available next to lowest priority. Highest priority needs to be picked first.
+b) If no such package available we need to pick package at the end of conveyor belt.
+
+Ex: Priorites : 2 , 6, 3
+Ans: 6, 2, 3
+
+My thought process : I used a package class which stores the id and package priority, Later I used Deque to load all the packages as it allows me to remove element from both sides I initially checked to see if there are any packages which satifies first condition, If so added them into the queue and removed that package from the queue. At the end I just added the elements from the last of the queue which satisfies the second condition.
+
+Follow - up:
+
+Interviewer asked for second approach I have told him if I could use the custome comparator which allows to compare the packages and add return them based on the conditions we have given.
+
+Again, Interviewer asked if there is a way I can be able to solve this,Insted of comparing the packages multiple times till all packages are removed. I told him I can take advantage of HashTable with key as boolean flag which track the package if it is already visited or not, He satisfied. Any thought plesase comment below.
+
+Solution:
